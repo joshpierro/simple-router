@@ -1,0 +1,19 @@
+DECLARE @Schema VARCHAR(255)
+SET @Schema = 'routing'
+
+DECLARE @Table VARCHAR(255)
+SET @Table = 'Routes'
+
+IF (EXISTS (SELECT *
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = @Schema AND TABLE_NAME = @Table))
+   BEGIN
+  DROP TABLE routing.Routes
+END
+  BEGIN
+ CREATE TABLE routing.Routes
+(
+  Id INT NOT NULL IDENTITY PRIMARY KEY,
+  DisplayName VARCHAR(255)
+)
+END

@@ -66,5 +66,13 @@
   </Target>
   <ItemGroup>
     <Build Include="stops.sql"/>
+    <Build Include="schema.sql"/>
+    <Build Include="Routes.sql"/>
+    <Build Include="usp_stops_getStops.sql"/>
+    <Build Include="usp_stops_addStop.sql"/>
+    <Build Include="usp_stops_deleteStop.sql"/>
+    <Build Include="usp_routes_addRoute.sql"/>
+    <Build Include="usp_routes_deleteRoutes.sql"/>
+    <Build Include="usp_routes_getRoutes.sql"/>
   </ItemGroup>
 </Project>

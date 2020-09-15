@@ -1,0 +1,5 @@
+C:\josh\simple-router\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\josh\simple-router\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
