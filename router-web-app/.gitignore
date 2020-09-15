@@ -5,6 +5,7 @@
 **/appsettings.development.json
 **/appsettings.staging.json
 **/appsettings.production.json
+**/appsettings.json
 
 # User-specific files
 *.suo
