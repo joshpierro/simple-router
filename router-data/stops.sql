@@ -1,0 +1,4 @@
+CREATE TABLE [dbo].[stops]
+(
+  [Id] INT NOT NULL PRIMARY KEY
+)
