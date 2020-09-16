@@ -2,7 +2,7 @@
 
 namespace DataAccess
 {
-    interface IDbConnectionFactory
+    public interface IDbConnectionFactory
     {
         IDbConnection CreateConnection();
     }

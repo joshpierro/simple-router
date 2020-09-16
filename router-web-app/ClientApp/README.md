@@ -1,4 +1,4 @@
-# router_web_app
+# angular_app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 

@@ -1,3 +1,4 @@
+using DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using Services.Routes;
+using Services.Stops;
 
 namespace router_web_app
 {
@@ -26,11 +30,30 @@ namespace router_web_app
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            // app bindings.
+            services.AddScoped<IDbConnectionFactory, ConnectionFactory>();
+            services.AddScoped<IRouteService, RouteService>();
+            services.AddScoped<IStopService, StopService>();
+
+            // third party 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "simple-router API", Version = "1.0.0" });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // swagger 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "simple-router API V 1.0.0");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -70,6 +93,7 @@ namespace router_web_app
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
         }
     }
 }

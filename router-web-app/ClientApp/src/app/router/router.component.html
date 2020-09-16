@@ -1,0 +1,27 @@
+<div fxLayout="column" fxFlexFill>
+  <div  fxLayout="row" fxLayoutGap="10" fxLayoutAlign="end center">
+      <div fxFlex="10">
+        <mat-form-field>
+          <mat-label>Select a Route</mat-label>
+          <mat-select [formControl]="routesControl" (selectionChange)="changeRoute($event)">
+            <mat-option *ngFor="let route of routes" [value]="route.routeId">{{route.displayName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex="5">
+        <button mat-raised-button *ngIf="stops.length" (click)="route()">Route</button>
+      </div>
+      <div fxFlex="5" *ngIf="!this.sketchTool">
+        <button mat-raised-button *ngIf="stops.length" (click)="addStop()">Add Stop</button>
+      </div>
+      <div fxFlex="5" *ngIf="this.sketchTool">
+        <button mat-raised-button *ngIf="stops.length" (click)="endSketch()">Done</button>
+      </div>
+    </div>
+
+  <section fxLayout="row">
+    <app-stops fxFlex="25" [directions]="directions" [stops]="stops" (deleteStopEvent)="deleteStop($event)"></app-stops>
+    <app-map fxFlex="75" [mapConfig]="mapConfig" (mapLoadedEvent)="onMapReady($event)"></app-map>
+  </section>
+
+</div>

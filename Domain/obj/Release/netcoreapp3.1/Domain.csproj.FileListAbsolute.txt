@@ -1,0 +1,8 @@
+C:\josh\simple-router\Domain\bin\Release\netcoreapp3.1\Domain.deps.json
+C:\josh\simple-router\Domain\bin\Release\netcoreapp3.1\Domain.dll
+C:\josh\simple-router\Domain\bin\Release\netcoreapp3.1\Domain.pdb
+C:\josh\simple-router\Domain\obj\Release\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\josh\simple-router\Domain\obj\Release\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\josh\simple-router\Domain\obj\Release\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\josh\simple-router\Domain\obj\Release\netcoreapp3.1\Domain.dll
+C:\josh\simple-router\Domain\obj\Release\netcoreapp3.1\Domain.pdb

@@ -74,5 +74,7 @@
     <Build Include="usp_routes_addRoute.sql"/>
     <Build Include="usp_routes_deleteRoutes.sql"/>
     <Build Include="usp_routes_getRoutes.sql"/>
+    <Build Include="usp_stops_updateStop.sql"/>
+    <Build Include="seedData.sql"/>
   </ItemGroup>
 </Project>

@@ -2,11 +2,11 @@
 
 CREATE PROCEDURE routing.usp_stops_addStop
   @routeId INT,
-  @displayName VARCHAR(25),
+  @displayName VARCHAR(255),
   @latitude FLOAT,
   @longitude FLOAT 
 AS
   INSERT INTO routing.Stops (RouteId,DisplayName,Latitude,Longitude)
   VALUES (@routeId,@displayName,@latitude,@longitude)
   
-SELECT SCOPE_IDENTITY()
+SELECT TOP 1 Id,RouteId,DisplayName,Latitude,Longitude FROM routing.Stops WHERE Id =  SCOPE_IDENTITY()

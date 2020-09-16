@@ -1,0 +1,24 @@
+
+<section fxLayout="column" fxFlexFill>
+<mat-card *ngIf="!stops.length">
+    No Route Selected
+</mat-card>
+<mat-list role="list" *ngIf="stops.length">
+    <mat-list-item role="listitem" *ngFor="let stop of stops">
+
+        <button mat-icon-button aria-label="delete stop" (click)="deleteStop(stop)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <div mat-line>{{stop.displayName}}</div>
+
+    </mat-list-item>
+</mat-list>
+
+<hr>
+<mat-card *ngIf="directions.length">
+    <span *ngFor="let direction of directions; let last = last">
+        {{direction}} 
+        <span *ngIf="!last"> - </span>
+    </span> 
+</mat-card>
+</section>
