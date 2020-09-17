@@ -66,7 +66,7 @@ export class RouterComponent implements OnInit {
 
   onMapReady(): void {
     this.createGraphicsLayers();
-    this.changeRoute({ value: 2, source: null });
+    // this.changeRoute({ value: 2, source: null });
   }
 
   route(): void {
@@ -103,7 +103,7 @@ export class RouterComponent implements OnInit {
   }
 
   private handleAddStop(event: __esri.SketchCreateEvent): void {
-    const geometry: {latitude:number, longitude: number} = event.graphic.geometry as any;
+    const geometry: {latitude: number, longitude: number} = event.graphic.geometry as any;
 
     const stop: Stop =  {
       latitude: geometry.latitude,
