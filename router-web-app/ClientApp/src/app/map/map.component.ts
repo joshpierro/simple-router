@@ -3,6 +3,9 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Output, EventEmitt
 
 // 3rd Party
 import { loadModules, setDefaultOptions } from 'esri-loader';
+import esri = __esri;
+
+// app
 import { MAP_ERROR} from '../configuration/app-settings.config';
 import { Mapconfig } from '../models/map-config';
 import { MapSymbol } from '../models/map-symbol';
@@ -14,16 +17,16 @@ import { MapSymbol } from '../models/map-symbol';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit, OnDestroy {
-  map: __esri.WebMap;
+  map: esri.WebMap;
   showLoadingIcon: boolean;
-  view: __esri.MapView;
+  view: esri.MapView;
 
-  private esriGraphicsLayer: __esri.GraphicsLayerConstructor;
-  private esriPoint: __esri.PointConstructor;
-  private esriGraphic: __esri.GraphicConstructor;
-  private esriLine: __esri.PolylineConstructor;
-  private esriSketch: __esri.SketchConstructor;
-  private sketchTool: __esri.Sketch;
+  private esriGraphicsLayer: esri.GraphicsLayerConstructor;
+  private esriPoint: esri.PointConstructor;
+  private esriGraphic: esri.GraphicConstructor;
+  private esriLine: esri.PolylineConstructor;
+  private esriSketch: esri.SketchConstructor;
+  private sketchTool: esri.Sketch;
 
   @ViewChild('mapView', { static: true }) private mapViewEl: ElementRef;
   @Input() mapConfig: Mapconfig;
@@ -40,22 +43,22 @@ export class MapComponent implements OnInit, OnDestroy {
     this.destroyMap();
   }
 
-  createGraphicsLayer(title: string): __esri.GraphicsLayer {
+  createGraphicsLayer(title: string): esri.GraphicsLayer {
     return new this.esriGraphicsLayer({ title });
   }
 
-  addGraphicsLayer(graphicsLayer: __esri.GraphicsLayer): void {
+  addGraphicsLayer(graphicsLayer: esri.GraphicsLayer): void {
     this.map.add(graphicsLayer);
   }
 
-  removeGraphicsLayer(graphicsLayer: __esri.GraphicsLayer): void {
+  removeGraphicsLayer(graphicsLayer: esri.GraphicsLayer): void {
     this.map.remove(graphicsLayer);
   }
 
   createPointGraphicWithLatLong(
     coordinates: number[],
     symbol: MapSymbol
-  ): __esri.Graphic {
+  ): esri.Graphic {
     const [latitude, longitude] = coordinates;
 
     const geometry = new this.esriPoint({
@@ -71,7 +74,7 @@ export class MapComponent implements OnInit, OnDestroy {
     return pointGraphic;
   }
 
-  createLinegraphic(paths: number[][][], symbol: MapSymbol): __esri.Graphic {
+  createLinegraphic(paths: number[][][], symbol: MapSymbol): esri.Graphic {
 
     const geometry = new this.esriLine({paths});
 
@@ -83,7 +86,7 @@ export class MapComponent implements OnInit, OnDestroy {
     return lineGraphic;
   }
 
-  createSketchTool(layer: __esri.GraphicsLayer): __esri.Sketch {
+  createSketchTool(layer: esri.GraphicsLayer): esri.Sketch {
     this.sketchTool = new this.esriSketch({
       layer,
       view: this.view,

@@ -3,9 +3,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSelectChange, MatSnackBar } from '@angular/material';
 
+// third party
+import esri = __esri;
+
 // app
-import { RoutesService } from './routes.service';
-import { StopsService } from './stops.service';
+import { RoutesService } from '../routes/routes.service';
+import { StopsService } from '../stops/stops.service';
 import { Route } from '../models/route';
 import { Stop } from '../models/stop';
 import {
@@ -35,10 +38,10 @@ export class RouterComponent implements OnInit {
   directions: string[] = [];
   routesControl = new FormControl();
   mapConfig: Mapconfig;
-  sketchTool: __esri.Sketch;
+  sketchTool: esri.Sketch;
 
-  private stopsGraphicslayer: __esri.GraphicsLayer;
-  private routeGraphicslayer: __esri.GraphicsLayer;
+  private stopsGraphicslayer: esri.GraphicsLayer;
+  private routeGraphicslayer: esri.GraphicsLayer;
   private routeId: number;
 
   @ViewChild(MapComponent, { static: false }) map: MapComponent;
@@ -102,7 +105,7 @@ export class RouterComponent implements OnInit {
     this.map.destroySketchTool();
   }
 
-  private handleAddStop(event: __esri.SketchCreateEvent): void {
+  private handleAddStop(event: esri.SketchCreateEvent): void {
     const geometry: {latitude: number, longitude: number} = event.graphic.geometry as any;
 
     const stop: Stop =  {
@@ -168,7 +171,7 @@ export class RouterComponent implements OnInit {
     this.zoomToNewFeatures(this.stopsGraphicslayer);
   }
 
-  private zoomToNewFeatures(graphicsLayer: __esri.GraphicsLayer): void {
+  private zoomToNewFeatures(graphicsLayer: esri.GraphicsLayer): void {
     const graphics: { items: any[] } = graphicsLayer.graphics as any;
     const extent = graphics.items.map((g) => g.geometry);
     this.map.view.goTo(extent);
