@@ -69,7 +69,6 @@ export class RouterComponent implements OnInit {
 
   onMapReady(): void {
     this.createGraphicsLayers();
-    // this.changeRoute({ value: 2, source: null });
   }
 
   route(): void {
