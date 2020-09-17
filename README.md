@@ -13,4 +13,4 @@ This app is a simple full stack transportation routing application. It allows us
     * ESRI javascript api for routing
 
 
-<img src="https://raw.githubusercontent.com/joshpierro/simple-router/feature/tyler-demo/etc/routing.gif?token=AARYS75B5YZRKMIAB7UWAW27MKZDO"/>
+<img src="https://i.imgur.com/bJnBc3i.mp4"/>
