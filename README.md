@@ -13,4 +13,4 @@ This app is a simple full stack transportation routing application. It allows us
     * ESRI javascript api for routing
 
 
-<img src="https://i.imgur.com/bJnBc3i.mp4"/>
+<img src="http://whereshappening.com/GIS/routing.gif"/>
