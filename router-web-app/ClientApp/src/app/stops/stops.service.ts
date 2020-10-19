@@ -30,6 +30,7 @@ export class StopsService {
       .set('f', 'json')
       .set(`token`, ESRI_ACCESS_TOKEN)
       .set('stops', JSON.stringify(stopsRequest));
+
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
     return this.http.post(this.arcGISRoutingURL, body.toString(), { headers, observe: 'response' });

@@ -5,3 +5,4 @@ C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo
 C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
 C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\josh\simple-router\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
